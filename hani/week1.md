@@ -19,7 +19,7 @@
 
 메서드와 람다를 일급 시민으로 ~> 언급하고 넘어가기
 
-### 스트림 처리 (Stream API)
+### #스트림 처리 (Stream API)
 
 간단하게 조립 라인처럼 어떤 항목을 연속으로 제공하는 기능
 
@@ -27,13 +27,13 @@
 
 →  따라서 스트림을 사용하면 스레드라는 복잡한 작업을 사용하지 않으면서 공짜로 **병렬**성을 얻을 수 있다.
 
-### 동작 파라미터화(behavior parameterization)로 메서드에 코드 전달하기
+### #동작 파라미터화(behavior parameterization)로 메서드에 코드 전달하기
 
 코드 일부를 API로 전달 → 동작 파라미터화(behavior parameterization)
 
 Java 8 이전의 복사 및 붙여넣기를 하는 기법에 비해 프로그램이 짧고 간결해지며, 불필요한 에러도 줄일 수 있다.
 
-### 병렬성과 공유 가변 데이터
+### #병렬성과 공유 가변 데이터
 
 기존의 멀티 코어를 이용하는 방법(스레드를 활용)은 매우 위험했다. 웬만한 전문가가 아니라면 사용하기 어려웠다.
 
@@ -54,7 +54,7 @@ Java 8 이전의 복사 및 붙여넣기를 하는 기법에 비해 프로그램
 
 - 익명 클래스
 
-```
+```java
 File[] hiddenFiles = new File(".").listFiles(new FileFilter() {
     public boolean accept(File file) {
         return file.isHidden();
@@ -64,7 +64,7 @@ File[] hiddenFiles = new File(".").listFiles(new FileFilter() {
 
 - 메서드 참조
 
-```
+```java
 File[] hiddenFiles = new File(".").listFiles(File::isHidden);
 ```
 
@@ -174,3 +174,5 @@ inventory.sort(new Comparator<Apple>() {
 inventory.sort(
 	(Apple a1, Apple a2) -> a1.getWeight().compareTo(a2.getWeight()));`
 ```
+
+## Notion. [Week1 Notion page](https://able-day-a94.notion.site/Week1-055e10796d4a40cbb152520313a41811)
