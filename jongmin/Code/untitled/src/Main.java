@@ -26,10 +26,5 @@ public class Main {
 
         Thread t = new Thread(() -> System.out.println("123"));
 
-        ExecutorService executorService = Executors.newCachedThreadPool();
-        Future<String> threadName = ex
-
-
-
     }
 }
