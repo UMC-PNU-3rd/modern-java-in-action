@@ -77,7 +77,7 @@ File[] hiddenFiles = new File(".").listFiles(File::isHidden);
 
 위 코드가 Java8을 활용한 코드이다. File::isHidden에서 “::”을 통해서 해당 메서드를 함수로 취급하겠다(함수와 메서드는 엄연히 다르다! 명심하자!)고 선언했다고 봐도 무방하다.
 
-즉, 해당 메서드를 참조(reference)하여 가
+즉, 해당 메서드를 참조(reference)하여 가져온다!
 
 ![Screenshot_20221003_130836_Samsung Notes.jpg](.img/Screenshot_20221003_130836_Samsung_Notes.jpg)
 
@@ -89,7 +89,7 @@ Java8에서는 메서드를 일급값 취급할 뿐 아니라, 람다를 포함�
 
 ### 예제
 
-```cpp
+```java
 public static List<Apple> filterGreenApples(List<Apple> inventory) {
 	List<Apple> result = new ArrayList();
 	for (Apple apple: inventory) {
@@ -109,7 +109,7 @@ public static List<Apple> filterHeavyApples(List<Apple> inventory) {
 }
 ```
 
-```cpp
+```java
 public static boolean isGreenApple(Apple apple) {
 	return GREEN.equals(apple.getColor());
 }
