@@ -220,7 +220,7 @@ public class LambdaCapture {
 다음 3가지 유형으로 구분 가능
 
 - 1. 정적 메소드 참조
-- 2.다양한 형식의 인스턴스 메소드 참조
+- 2. 다양한 형식의 인스턴스 메소드 참조
 - 3. 기존 객체의 인스턴스 매소드 참조
 
 `2` 같은 경우는 `클래스::메소드` 의 형태고 `3` 같은 경우는 `인스턴스::메소드` 형태다
@@ -319,11 +319,11 @@ inventory.sort(Comparator.comparing(Apple::getWeight));
 
 // 역정렬, 무게를 내림차순으로 정렬
 inventory.sort(Comparator.comparing(Apple::getWeight)
-													.reversed());
+			.reversed());
 
 // 처음 key 값이 같을 때 비교할 두번째 key 값 지정하기
 inventory.sort(Comparator.comparing(Apple::getWeight)
-													.thenComparing(Apple::getCountry)); 
+			.thenComparing(Apple::getCountry)); 
 ```
 
 ### Predicate 유용하게 사용하기
