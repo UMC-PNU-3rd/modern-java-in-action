@@ -1,12 +1,11 @@
-import java.io.File;
-import java.io.FileFilter;
+import java.io.*;
 import java.util.Comparator;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         //기존 방식
         File[] hiddenFiles = new File(".").listFiles(new FileFilter() {
             @Override
@@ -59,15 +58,39 @@ public class Main {
         process(r2); // hello world2 출력
         process(() -> System.out.println("hello world3")); // 직접 전달된 람다 표현식으로 출력
 
-        
 
-
+        //1단계
+        String result = processFile((BufferedReader br) -> br.readLine());
+// 4단계 람다 전달
+        String oneLine = processFile2((BufferedReader br) -> br.readLine());
+        //(BufferedReader br)가 BufferedReaderProcessor의 추상 메서드에 넘겨버림
 
     }
+    // 일반적인 코드
+    //1단계
+    public static String processFile() throws IOException {
+        BufferedReader br = new BufferedReader(new FileReader("data.text"));
+        return br.readLine();
+    }
+
+    //3단계 동작실행
+    public static String processFile2(BufferedReaderProcessor p) throws IOException {
+        BufferedReader br = new BufferedReader(new FileReader("data.txt"));
+        return p.process(br);
+    }
+
+
+
+
 }
 class Apple {
     int weight;
     public int getWeight(){
         return this.weight;
     }
+}
+//3.3.2 2단계
+@FunctionalInterface
+interface BufferedReaderProcessor {
+    String process(BufferedReader b) throws IOException;
 }
