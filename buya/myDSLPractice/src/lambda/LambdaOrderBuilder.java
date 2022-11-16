@@ -27,5 +27,7 @@ public class LambdaOrderBuilder {
     private void trade(Consumer<TradeBuilder> consumer, Trade.Type type) {
         TradeBuilder builder = new TradeBuilder();
         builder.getTrade().setType(type);
+        consumer.accept(builder);
+        order.addTrade(builder.getTrade());
     }
 }
