@@ -1,10 +1,11 @@
-package lambda;
+package lambdaDSL;
 
 import domain.*;
+import static lambdaDSL.LambdaOrderBuilder.order;
 
 public class Main {
     public void doLambda() {
-        Order order = LambdaOrderBuilder.order(o -> {
+        Order order = order(o -> {
             o.forCustomer("BigBank");
             o.buy( t -> {
                 t.quantity(80);

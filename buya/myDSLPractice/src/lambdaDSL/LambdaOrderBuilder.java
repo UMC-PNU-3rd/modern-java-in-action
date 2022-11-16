@@ -1,4 +1,4 @@
-package lambda;
+package lambdaDSL;
 
 import java.util.function.Consumer;
 import domain.*;

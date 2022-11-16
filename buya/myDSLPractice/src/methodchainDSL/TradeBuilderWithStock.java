@@ -1,4 +1,4 @@
-package methodchain;
+package methodchainDSL;
 
 import domain.*;
 

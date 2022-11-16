@@ -1,10 +1,12 @@
-package methodchain;
+package methodchainDSL;
 
 import domain.*;
 
+import static methodchainDSL.MethodChainingOrderBuilder.forCustomer;
+
 public class Main {
     public void doMethodChain() {
-        Order order = MethodChainingOrderBuilder.forCustomer("BigBank")
+        Order order = forCustomer("BigBank")
                 .buy(80)
                 .stock("IBM")
                 .on("NYSE")
